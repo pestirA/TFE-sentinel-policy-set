@@ -1,0 +1,20 @@
+import "http"
+import "json"
+import "tfrun"
+
+param bc_api_key
+
+req = http.request("https://www.bridgecrew.cloud/api/v1/tfEnterprise/sentinel/" + tfrun.workspace.id).with_header("Authorization", bc_api_key)
+resp = json.unmarshal(http.get(req).body)
+
+if (length(resp.violations) > 0) {
+  print("Violations:\n")
+  for resp.violations as violation {
+      print(violation.title)
+      print("Resource: " + violation.resource_id)
+      print("Violation ID: " + violation.violation_id)
+      print("\n")
+  }
+}
+print("More details: " + resp.details_url)  
+main = rule { length(resp.violations) < 1 }
