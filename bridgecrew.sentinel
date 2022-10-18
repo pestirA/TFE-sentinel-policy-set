@@ -24,9 +24,9 @@ body = {
   	},
 }
 
-req = http.request("https://www.bridgecrew.cloud/api/v1/global/terraformEnterprise/webhook").with_body(json.marshal(body)).with_header("Authorization", bc_api_key)
-resp = json.unmarshal(http.post(req).body).data
 
+req = http.request("https://www.bridgecrew.cloud/api/v1/tfCloud/sentinel/ws-VNsYgtXtyyTCL2Ei").with_header("Authorization", 92b69d15-ab5a-4ae8-83ef-3411274447e7)
+resp = json.unmarshal(http.get(req).body)
 if (length(resp.violations) > 0) {
   print("Violations:\n")
   for resp.violations as violation {
