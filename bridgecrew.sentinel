@@ -1,3 +1,5 @@
+# This policy uses the Sentinel tfplan import to validate against the bridgecrew policies with results avaialble via dashboard here https://www.bridgecrew.cloud/dashboard
+
 import "http"
 import "json"
 import "tfrun"
