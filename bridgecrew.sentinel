@@ -4,7 +4,7 @@ import "http"
 import "json"
 import "tfrun"
 
-param bc_api_key
+param BC_API_KEY
 
 body = {
 	"organization" : tfrun.organization.name,
@@ -25,7 +25,7 @@ body = {
 }
 
 
-req = http.request("https://www.bridgecrew.cloud/api/v1/tfCloud/sentinel/ws-VNsYgtXtyyTCL2Ei").with_header("Authorization", 92b69d15-ab5a-4ae8-83ef-3411274447e7)
+req = http.request("https://www.bridgecrew.cloud/api/v1/tfCloud/sentinel/ws-VNsYgtXtyyTCL2Ei").with_header("Authorization", BC_API_KEY)
 resp = json.unmarshal(http.get(req).body)
 if (length(resp.violations) > 0) {
   print("Violations:\n")
