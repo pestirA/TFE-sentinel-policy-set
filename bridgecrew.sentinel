@@ -4,8 +4,7 @@ import "http"
 import "json"
 import "tfrun"
 
-#param BC_API_KEY
-param 92b69d15-ab5a-4ae8-83ef-3411274447e7
+param BC_API_KEY
 
 body = {
 	"organization" : tfrun.organization.name,
