@@ -26,7 +26,8 @@ body = {
 
 
 req = http.request("https://www.bridgecrew.cloud/api/v1/tfCloud/sentinel/ws-VNsYgtXtyyTCL2Ei").with_header("Authorization", BC_API_KEY)
-resp = json.unmarshal(http.get(req).body)
+resp = json.unmarshal(http.Get(req).body)
+#resp, err := json.unmarshal(http.Get
 fmt.printf(resp)
 
 if (length(resp.violations) > 0) {
