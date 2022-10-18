@@ -36,5 +36,5 @@ if (length(resp.violations) > 0) {
       print("\n")
   }
 }
-print("More details: " + resp.details_url)  
+print("OPS 2.0: |BridgeCrew | More details: " + resp.details_url)  
 main = rule { length(resp.violations) < 1 }
